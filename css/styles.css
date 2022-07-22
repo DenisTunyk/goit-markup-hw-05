@@ -581,6 +581,7 @@ img{
 
   line-height: calc(28px/18px);
   color: var(--white-color);
+  font-size: 18px;
 
   background: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
