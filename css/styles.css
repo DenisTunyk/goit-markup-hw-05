@@ -43,6 +43,9 @@ body{
   font-size: 14px;
   line-height: 1.71;
 }
+.no-scroll{
+  overflow: hidden;
+}
 h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0px;
   padding: 0px;
@@ -672,6 +675,8 @@ img{
   height: 100%;
 
   background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function);
 }
 .backdrop.is-hidden{
   opacity: 0;
@@ -679,17 +684,22 @@ img{
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal{
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
 .modal{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
   width: 528px;
   height: 581px;
   background-color: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-function);
 }
 .modal-btn{
   position: absolute;
